@@ -1,13 +1,18 @@
 // src/components/navigation/Header.jsx
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { RiPhoneFill } from "react-icons/ri";
+
+const LOGO = "/abmalonda_logo.png";
 
 const NAV = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
   { label: "Services", to: "/services" },
-  { label: "Projects", to: "/projects" },
 ];
+
+const PHONE_MOBILE_TEL = "+639054931351";
+const PHONE_MOBILE = "0905-493-1351";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -26,14 +31,21 @@ export default function Header() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
           <div className="flex h-16 items-center justify-between gap-4">
             {/* Brand */}
-            <Link to="/" className="group flex flex-col leading-tight">
-              <span className="text-lg font-extrabold tracking-wide">
-                AB MALONDA
+            <Link to="/" className="group flex items-center gap-3">
+              <img
+                src={LOGO}
+                alt="AB Malonda Airconditioning Co. logo"
+                className="h-10 w-10 rounded-lg ring-1 ring-white/30"
+              />
+              <span className="flex flex-col leading-tight">
+                <span className="text-lg font-extrabold tracking-wide">
+                  AB MALONDA
+                </span>
+                <span className="text-[11px] tracking-[0.2em] opacity-90">
+                  AIRCONDITIONING CO.
+                </span>
+                <span className="mt-0.5 h-0.5 w-0 bg-secondary/70 transition-all duration-200 group-hover:w-full" />
               </span>
-              <span className="text-[11px] tracking-[0.2em] opacity-90">
-                AIRCONDITIONING CO.
-              </span>
-              <span className="mt-0.5 h-0.5 w-0 bg-secondary/70 transition-all duration-200 group-hover:w-full" />
             </Link>
 
             {/* Desktop nav (right-aligned) */}
@@ -47,6 +59,13 @@ export default function Header() {
                   {item.label}
                 </Link>
               ))}
+              <a
+                href={`tel:${PHONE_MOBILE_TEL}`}
+                className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-secondary shadow-sm transition-colors hover:bg-accent-hover"
+                aria-label={`Call AB Malonda at ${PHONE_MOBILE}`}
+              >
+                <RiPhoneFill /> {PHONE_MOBILE}
+              </a>
             </nav>
 
             {/* Mobile burger */}
@@ -77,7 +96,7 @@ export default function Header() {
             className="fixed inset-0 bg-black/40 backdrop-blur-sm"
           />
           {/* Slide-out menu */}
-          <nav className="fixed inset-y-0 right-0 w-[78%] max-w-xs bg-primary px-4 py-5 shadow-xl">
+          <nav className="fixed inset-y-0 right-0 flex w-[78%] max-w-xs flex-col bg-primary px-4 py-5 shadow-xl">
             <div className="flex flex-col gap-1">
               {NAV.map((item) => (
                 <Link
@@ -90,6 +109,12 @@ export default function Header() {
                 </Link>
               ))}
             </div>
+            <a
+              href={`tel:${PHONE_MOBILE_TEL}`}
+              className="mt-auto inline-flex items-center justify-center gap-2 rounded-full bg-accent px-4 py-2.5 text-sm font-semibold text-secondary shadow-sm"
+            >
+              <RiPhoneFill /> Call {PHONE_MOBILE}
+            </a>
           </nav>
         </div>
       )}

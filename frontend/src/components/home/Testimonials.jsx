@@ -42,7 +42,7 @@ function Stars({ n }) {
 export default function Testimonials() {
   return (
     <section
-      className="relative bg-primary text-secondary"
+      className="relative bg-gradient-to-br from-[#00275c] via-primary to-[#003a8c] text-secondary"
       aria-labelledby="testimonials-heading"
     >
       {/* soft spotlight */}

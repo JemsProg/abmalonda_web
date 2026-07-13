@@ -2,7 +2,8 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Hero_img from "../../assets/home/hero_image.png";
+import { RiSnowyFill } from "react-icons/ri";
+import Hero_img from "../../assets/home/hero_image.webp";
 
 export default function Hero() {
   useEffect(() => {
@@ -47,8 +48,8 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="order-2 md:order-1"
         >
-          <span className="inline-block rounded-full border border-primary/20 bg-white/60 px-3 py-1 text-xs font-medium text-primary backdrop-blur-md">
-            HVAC Experts • Metro Manila
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/25 bg-accent/10 px-3 py-1 text-xs font-medium text-accent backdrop-blur-md">
+            <RiSnowyFill /> HVAC Experts • Metro Manila
           </span>
 
           <h1 className="mt-3 text-3xl font-extrabold leading-tight text-primary sm:text-5xl">
@@ -91,7 +92,7 @@ export default function Hero() {
 
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-lg border border-primary px-5 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary-hover hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2 text-sm font-semibold text-secondary shadow-sm transition-colors hover:bg-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/40"
               aria-label="Contact AB Malonda for a free quote"
             >
               Get Free Quote

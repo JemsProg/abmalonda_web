@@ -4,4 +4,21 @@
   --color-primary: #004aad;
   --color-secondary: #fffafa;
   --color-primary-hover: #0057c2;
+
+  /* lighter sky-blue accent — monochromatic with primary, used for CTAs, badges & highlights */
+  --color-accent: #2fa9e0;
+  --color-accent-hover: #2890be;
+
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+  }
 }

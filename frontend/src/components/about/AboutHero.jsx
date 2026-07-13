@@ -1,6 +1,7 @@
 // src/components/about/AboutHero.jsx
 import React from "react";
 import { motion } from "framer-motion";
+import { RiTeamFill } from "react-icons/ri";
 
 export default function AboutHero() {
   return (
@@ -14,11 +15,19 @@ export default function AboutHero() {
         }}
       />
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-20">
+        <motion.span
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45 }}
+          className="inline-flex items-center gap-1.5 rounded-full border border-accent/25 bg-accent/10 px-3 py-1 text-xs font-medium text-accent backdrop-blur-md"
+        >
+          <RiTeamFill /> Est. Parañaque, Metro Manila
+        </motion.span>
         <motion.h1
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl font-extrabold text-primary sm:text-5xl"
+          className="mt-3 text-3xl font-extrabold text-primary sm:text-5xl"
         >
           About AB Malonda Airconditioning Co.
         </motion.h1>

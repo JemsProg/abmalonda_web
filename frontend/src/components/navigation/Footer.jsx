@@ -11,12 +11,13 @@ const PHONE_MOBILE = "0905-493-1351";
 const PHONE_MOBILE_TEL = "+639054931351";
 const VIBER_DEEPLINK = "viber://chat?number=%2B639054931351";
 const FB_URL = "https://www.facebook.com/abmalonda.ac/";
+const LOGO = "/abmalonda_logo.png";
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative mt-16 bg-white">
+    <footer className="relative mt-16 bg-white pb-16 md:pb-0">
       {/* soft background accents */}
       <div
         aria-hidden="true"
@@ -32,12 +33,19 @@ export default function Footer() {
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-12 sm:px-6 md:grid-cols-4">
           {/* brand */}
           <div className="space-y-3">
-            <div className="leading-tight">
-              <div className="text-lg font-extrabold tracking-wide text-primary">
-                AB MALONDA
-              </div>
-              <div className="text-[11px] tracking-[0.2em] text-black/70">
-                AIRCONDITIONING CO.
+            <div className="flex items-center gap-3">
+              <img
+                src={LOGO}
+                alt="AB Malonda Airconditioning Co. logo"
+                className="h-11 w-11 rounded-lg ring-1 ring-black/10"
+              />
+              <div className="leading-tight">
+                <div className="text-lg font-extrabold tracking-wide text-primary">
+                  AB MALONDA
+                </div>
+                <div className="text-[11px] tracking-[0.2em] text-black/70">
+                  AIRCONDITIONING CO.
+                </div>
               </div>
             </div>
             <p className="max-w-xs text-sm text-black/70">
@@ -70,11 +78,6 @@ export default function Footer() {
               <li>
                 <Link to="/services" className="hover:text-primary">
                   Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/projects" className="hover:text-primary">
-                  Projects
                 </Link>
               </li>
             </ul>
@@ -137,7 +140,7 @@ export default function Footer() {
               </a>
               <a
                 href={VIBER_DEEPLINK}
-                className="inline-flex items-center gap-2 rounded-lg border border-primary bg-white/70 px-3 py-2 text-sm font-semibold text-primary hover:bg-primary-hover hover:text-secondary"
+                className="inline-flex items-center gap-2 rounded-lg bg-accent px-3 py-2 text-sm font-semibold text-secondary hover:bg-accent-hover"
               >
                 <SiViber />
                 Message via Viber

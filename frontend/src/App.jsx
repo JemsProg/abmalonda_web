@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Footer from "./components/navigation/Footer";
 import About from "./pages/About";
 import Services from "./pages/Services";
-import Projects from "./pages/Projects";
+import MobileCTA from "./components/navigation/MobileCTA";
 
 function App() {
   return (
@@ -16,9 +16,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/projects" element={<Projects />} />
         </Routes>
         <Footer />
+        <MobileCTA />
       </BrowserRouter>
     </>
   );

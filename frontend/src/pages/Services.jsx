@@ -10,6 +10,7 @@ import {
   RiCheckFill,
   RiTimer2Fill,
   RiShieldCheckFill,
+  RiSnowyFill,
 } from "react-icons/ri";
 
 /* ----------------------------- SEO (no Helmet) ---------------------------- */
@@ -98,9 +99,15 @@ const SERVICES = [
 ];
 
 /* ------------------------------ UI helpers ------------------------------- */
-function SectionContainer({ children }) {
+function SectionContainer({ children, tint = false }) {
   return (
-    <section className="relative bg-white">
+    <section
+      className={`relative ${
+        tint
+          ? "bg-gradient-to-br from-white via-[#f4fbfb] to-white"
+          : "bg-white"
+      }`}
+    >
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">{children}</div>
     </section>
   );
@@ -119,11 +126,19 @@ function ServicesHero() {
         }}
       />
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-20">
+        <motion.span
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45 }}
+          className="inline-flex items-center gap-1.5 rounded-full border border-accent/25 bg-accent/10 px-3 py-1 text-xs font-medium text-accent backdrop-blur-md"
+        >
+          <RiSnowyFill /> Installation • Cleaning • Repair
+        </motion.span>
         <motion.h1
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl font-extrabold text-primary sm:text-5xl"
+          className="mt-3 text-3xl font-extrabold text-primary sm:text-5xl"
         >
           Aircon Services
         </motion.h1>
@@ -285,7 +300,7 @@ function ProcessStrip() {
     },
   ];
   return (
-    <SectionContainer>
+    <SectionContainer tint>
       <h2 className="mb-6 text-2xl font-bold text-primary">How we work</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
         {STEPS.map((s, i) => (
